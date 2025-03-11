@@ -8,7 +8,7 @@ export const routes: Routes = [
   },
   {
     path: 'numbers',
-    title: 'Numbers Pipes',
+    title: 'Numeric Pipes',
     loadComponent: () => import('./pages/numbers-page/numbers-page.component'),
   },
   {

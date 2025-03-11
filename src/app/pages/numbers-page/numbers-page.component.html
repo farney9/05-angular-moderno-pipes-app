@@ -1,1 +1,48 @@
-<p>numbers-page works!</p>,
+<section class="my-3">
+  <h1 class="text-3xl font-bold">Numeric Pipes</h1>
+  <h3 class="font-thin">Included pipe in Angular</h3>
+  <div class="stats stats-vertical md:stats-horizontal shadow justify-center items-center flex">
+    <div class="stat place-items-start">
+      <div class="stat-title text-lg">1 entero y 2 decimales</div>
+      <div class="stat-title text-lg text-secondary">number: '1.2-2'</div>
+      <div class="stat-value">{{ totalSells() | number: '1.2-2' }}</div>
+      <div class="stat-desc text-primary text-lg">{{totalSells()}}</div>
+    </div>
+    <div class="stat place-items-start">
+      <div class="stat-title text-lg">Sumando 1234 a la parte entera</div>
+      <div class="stat-title text-lg text-secondary">number: '1.1-2'</div>
+      <div class="stat-value">{{ totalSells() + 1234 | number: '1.1-2' }}</div>
+      <div class="stat-desc text-primary text-lg">{{totalSells()}}</div>
+    </div>
+    <div class="stat place-items-start">
+      <div class="stat-title text-lg">Currency por defecto</div>
+      <div class="stat-title text-lg text-secondary">currency</div>
+      <div class="stat-value">{{ totalSells() |currency }}</div>
+      <div class="stat-desc text-primary text-lg">{{totalSells()}}</div>
+    </div>
+    <div class="stat place-items-start">
+      <div class="stat-title text-lg">Currency con country code</div>
+      <div class="stat-title text-lg text-secondary">currency: 'CAD'</div>
+      <div class="stat-value">{{ totalSells() | currency: 'CAD' }}</div>
+      <div class="stat-desc text-primary text-lg">{{totalSells()}}</div>
+    </div>
+  </div>
+</section>
+<section class="my-3">
+  <h1 class="text-3xl font-bold">Percent Pipe</h1>
+  <h3 class="font-thin">Included pipe in Angular</h3>
+  <div class="stats stats-vertical md:stats-horizontal shadow justify-center items-center flex">
+    <div class="stat place-items-center">
+      <div class="stat-title text-lg">percent por defecto</div>
+      <div class="stat-title text-lg text-secondary">percent</div>
+      <div class="stat-value">{{percent() | percent}}</div>
+      <div class="stat-desc text-primary text-lg">{{percent()}}</div>
+    </div>
+    <div class="stat place-items-center">
+      <div class="stat-title text-lg">percent con decimales</div>
+      <div class="stat-title text-lg text-secondary">percent:'1.2-2'</div>
+      <div class="stat-value">{{percent() | percent:'1.2-2'}}</div>
+      <div class="stat-desc text-primary text-lg">{{percent()}}</div>
+    </div>
+  </div>
+</section>

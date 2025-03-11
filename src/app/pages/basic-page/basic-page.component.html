@@ -1,1 +1,25 @@
-<p>basic-page works!</p>,
+<section class="my-3">
+  <h1 class="text-3xl font-bold">Basic Pipes</h1>
+  <h3 class="font-thin">Included pipe in Angular</h3>
+  <div class="stats stats-vertical md:stats-horizontal shadow justify-center items-center flex">
+    <div class="stat place-items-center">
+      <div class="stat-title text-lg text-secondary">lowercase <span class="stat-title text-lg">Pipe</span></div>
+      <div class="stat-value">{{nameUpper() | lowercase}}</div>
+      <div class="stat-desc text-primary text-lg">{{nameUpper()}}</div>
+    </div>
+
+    <div class="stat place-items-center">
+      <div class="stat-title text-lg text-secondary">uppercase <span class="stat-title text-lg">Pipe</span></div>
+      <div class="stat-value">{{nameLower() | uppercase}}</div>
+      <div class="stat-desc text-primary text-lg">{{nameLower()}}</div>
+    </div>
+
+    <div class="stat place-items-center">
+      <div class="stat-title text-lg text-secondary">titlecase <span class="stat-title text-lg">Pipe</span></div>
+      <div class="stat-value">{{fullName() | titlecase}}</div>
+      <div class="stat-desc text-primary text-lg">{{fullName()}}</div>
+    </div>
+  </div>
+</section>
+
+
