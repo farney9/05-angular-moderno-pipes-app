@@ -21,5 +21,65 @@
     </div>
   </div>
 </section>
+<div class="divider divider-info"></div>
+<section class="my-3">
+  <h1 class="text-3xl font-bold">Date Pipe</h1>
+  <div class="stats stats-vertical md:stats-horizontal shadow justify-center items-center flex">
+    <div class="stat place-items-start">
+      <div class="stat-title text-lg">date por defecto</div>
+      <div class="stat-title text-lg text-secondary">date</div>
+      <div class="stat-value">{{customDate() | date}}</div>
+      <div class="stat-desc text-primary text-lg">{{customDate()}}</div>
+    </div>
+    <div class="stat place-items-start">
+      <div class="stat-title text-lg">Date long</div>
+      <div class="stat-title text-lg text-secondary">date: 'long': 'GMT-6'</div>
+      <div class="stat-value">{{customDate() | date: 'long': 'GMT-6'}}</div>
+      <div class="stat-desc text-primary text-lg">{{customDate()}}</div>
+    </div>
+  </div>
+</section>
+<section class="my-3">
+  <div class="stats stats-vertical md:stats-horizontal shadow justify-center items-center flex">
+    <div class="stat place-items-start">
+      <div class="stat-title text-lg">Date short</div>
+      <div class="stat-title text-lg text-secondary">date: 'short': 'GMT-4'</div>
+      <div class="stat-value">{{customDate() | date: 'short': 'GMT-4'}}</div>
+      <div class="stat-desc text-primary text-lg">{{customDate()}}</div>
+    </div>
+    <div class="stat place-items-start">
+      <div class="stat-title text-lg">Custom date</div>
+      <div class="stat-title text-lg text-secondary">date: 'yyyy MM'</div>
+      <div class="stat-value">{{customDate() | date: 'yyyy MM'}}</div>
+      <div class="stat-desc text-primary text-lg">{{customDate()}}</div>
+    </div>
+  </div>
+</section>
+<section class="my-3">
+  <div class="stats stats-vertical md:stats-horizontal shadow justify-center items-center flex">
+    <div class="stat place-items-start">
+      <div class="stat-title text-lg"></div>
+      <div class="stat-title text-lg text-secondary">date: 'dd/MM/yyyy'</div>
+      <div class="stat-value">{{customDate() | date: 'dd/MM/yyyy'}}</div>
+      <div class="stat-desc text-primary text-lg">{{customDate()}}</div>
+    </div>
+  </div>
+</section>
+<section class="my-3">
+  <div class="stats stats-vertical md:stats-horizontal shadow justify-center items-center flex">
+    <div class="stat place-items-start">
+      <div class="stat-title text-lg"></div>
+      <div class="stat-title text-lg text-secondary">date: 'HH:mm:ss'</div>
+      <div class="stat-value">{{customDate() | date: 'HH:mm:ss'}}</div>
+      <div class="stat-desc text-primary text-lg">{{customDate()}}</div>
+    </div>
+    <div class="stat place-items-start">
+      <div class="stat-title text-lg"></div>
+      <div class="stat-title text-lg text-secondary">date: 'EEEE d, MMMM'</div>
+      <div class="stat-value">{{customDate() | date: 'EEEE d, MMMM'}}</div>
+      <div class="stat-desc text-primary text-lg">{{customDate()}}</div>
+    </div>
+  </div>
+</section>
 
 
