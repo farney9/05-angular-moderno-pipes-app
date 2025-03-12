@@ -29,6 +29,18 @@
   </div>
 </section>
 <section class="my-3">
+  <div class="stats stats-vertical md:stats-horizontal shadow justify-center items-center flex">
+    <div class="stat place-items-start">
+      <div class="stat-title text-lg">Currency con country code</div>
+      <div class="stat-title text-lg text-secondary">currency: 'COP'</div>
+      <div class="stat-value">{{ totalSells() | currency: 'COP' }}</div>
+      <div class="stat-desc text-primary text-lg">{{totalSells()}}</div>
+    </div>
+  </div>
+</section>
+<div class="divider divider-info"></div>
+
+<section class="my-3">
   <h1 class="text-3xl font-bold">Percent Pipe</h1>
   <h3 class="font-thin">Included pipe in Angular</h3>
   <div class="stats stats-vertical md:stats-horizontal shadow justify-center items-center flex">

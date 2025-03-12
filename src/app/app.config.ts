@@ -1,8 +1,14 @@
-import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
+import { ApplicationConfig, LOCALE_ID, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
-import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { LocationStrategy, HashLocationStrategy, registerLocaleData } from '@angular/common';
+
+import localeEs from '@angular/common/locales/es-CO';
+import localeFr from '@angular/common/locales/fr';
+
+registerLocaleData(localeEs, 'es');
+registerLocaleData(localeFr, 'fr');
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -12,5 +18,9 @@ export const appConfig: ApplicationConfig = {
     {
       provide: LocationStrategy,
       useClass: HashLocationStrategy
+    },
+    {
+      provide: LOCALE_ID,
+      useValue: 'es'
     },
   ]};
