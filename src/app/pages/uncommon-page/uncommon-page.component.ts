@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { CardComponent } from "../../components/card/card.component";
-import { I18nSelectPipe } from '@angular/common';
+import { I18nPluralPipe, I18nSelectPipe } from '@angular/common';
 
 const client1 = {
   name: 'Farney',
@@ -18,12 +18,12 @@ const client2 = {
 
 @Component({
   selector: 'app-uncommon-page',
-  imports: [CardComponent, I18nSelectPipe],
+  imports: [CardComponent, I18nSelectPipe, I18nPluralPipe],
   templateUrl: './uncommon-page.component.html',
 })
 export default class UncommonPageComponent {
 
-  // i18n Select Pipe
+  // i18nSelect Pipe
   client = signal(client1);
 
   invitationMap = {
@@ -32,12 +32,34 @@ export default class UncommonPageComponent {
   }
 
   changeClient() {
-    if (this.client() === client1) {
-      this.client.set(client2);
-      return;
-    }
-
+    // Condición ternaria que cambia el cliente actual entre client1 y client2
+    this.client() === client1 ? this.client.set(client2) : this.client.set(client1);
     this.client.set(client1);
+  }
 
+  // i18nPlural Pipe
+
+  clientsMap = signal({
+    '=0': 'no tenemos ningún cliente esperando.',
+    '=1': 'un cliente esperando.',
+    '=2': '2 clientes esperando.',
+    other: '# clientes esperando.',
+  })
+  clients = signal([
+    'María',
+    'Juan',
+    'Pedro',
+    'Luis',
+    'Ana',
+    'Sofía',
+    'Carlos',
+    'Mónica',
+    'Andrés',
+    'Camila'
+  ]);
+
+  removeClient() {
+    // Elimina el último cliente en la lista
+    this.clients.update(clients => clients.slice(1));
   }
 }

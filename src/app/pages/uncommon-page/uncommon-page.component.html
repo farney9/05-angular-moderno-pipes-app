@@ -4,9 +4,24 @@
 </section>
 <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
   <app-card title="i18nSelectPipe">
-    <p>Saludos <strong>{{client().name}}</strong> , es un placer {{client().gender | i18nSelect:invitationMap}} a nuestro evento.</p>
-    <div class="card-actions justify-end">
-      <button (click)="changeClient()" class="btn btn-primary">Change Client</button>
+    <div class="flex flex-col justify-between h-full p-4">
+      <p>Saludos <strong>{{client().name}}</strong>, es un placer {{client().gender | i18nSelect:invitationMap}} a nuestro evento.</p>
+      <div class="card-actions justify-center mt-4">
+        <button (click)="changeClient()" class="btn btn-primary">Change Client</button>
+      </div>
+    </div>
+  </app-card>
+  <app-card title="i18nPluralPipe">
+    <div class="flex flex-col justify-between h-full p-4">
+      <p>Actualmente hay <span class="badge badge-secondary">{{clients().length | i18nPlural:clientsMap() }}</span></p>
+      <div class="card-actions justify-center mt-4">
+        <button
+          [disabled]="clients().length === 0"
+          (click)="removeClient()" class="btn btn-primary"
+          >
+          Remove Client
+        </button>
+      </div>
     </div>
   </app-card>
 </section>
