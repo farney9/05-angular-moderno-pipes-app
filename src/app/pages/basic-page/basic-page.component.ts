@@ -1,5 +1,6 @@
 import { DatePipe, DecimalPipe, LowerCasePipe, TitleCasePipe, UpperCasePipe,  } from '@angular/common';
-import { Component, effect, signal } from '@angular/core';
+import { Component, effect, inject, LOCALE_ID, signal } from '@angular/core';
+import { Locale, LocaleService } from '../../services/locale.service';
 
 @Component({
   selector: 'app-basic-page',
@@ -12,6 +13,10 @@ import { Component, effect, signal } from '@angular/core';
   templateUrl: './basic-page.component.html',
 })
 export default class BasicPageComponent {
+
+  localeService = inject(LocaleService);
+  currentLocale = signal(inject(LOCALE_ID));
+
   nameLower = signal('farney');
   nameUpper = signal('FARNEY');
   fullName = signal('fArNeY jImEnEz');
@@ -29,4 +34,14 @@ export default class BasicPageComponent {
       console.log('Ticking date effect cleaned up');
     })
   });
+
+  changeLanguage(locale: Locale) {
+
+    console.log({locale});
+
+    this.localeService.changeLocale(locale);
+  }
+
+
+
 }

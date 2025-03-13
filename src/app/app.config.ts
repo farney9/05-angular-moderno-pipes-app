@@ -6,6 +6,7 @@ import { LocationStrategy, HashLocationStrategy, registerLocaleData } from '@ang
 
 import localeEs from '@angular/common/locales/es-CO';
 import localeFr from '@angular/common/locales/fr';
+import { LocaleService } from './services/locale.service';
 
 registerLocaleData(localeEs, 'es');
 registerLocaleData(localeFr, 'fr');
@@ -21,6 +22,9 @@ export const appConfig: ApplicationConfig = {
     },
     {
       provide: LOCALE_ID,
-      useValue: 'es'
+      // useValue: 'es'
+      // Sirve para cambiar el idioma de la aplicación de forma dinámica
+      deps: [LocaleService],
+      useFactory: (localeService: LocaleService) => localeService.getLocale
     },
   ]};
