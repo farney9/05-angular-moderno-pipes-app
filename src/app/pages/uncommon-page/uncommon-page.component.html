@@ -1,8 +1,8 @@
-<section class="my-3 mb-5">
+<section class="my-3">
   <h1 class="text-3xl font-bold">Uncommon Pipes</h1>
   <h3 class="font-thin">Included pipe in Angular</h3>
 </section>
-<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+<section class=" my-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
   <app-card title="i18nSelectPipe">
     <div class="flex flex-col h-full">
       <p>Saludos <strong>{{client().name}}</strong>, es un placer {{client().gender | i18nSelect:invitationMap}} a
@@ -58,12 +58,42 @@
       <pre class="text-warning">{{clients() | json}}</pre>
       <pre class="text-warning">{{client() | json}}</pre>
       <p class="text-warning">{{clients().join(', ') | json}}</p>
+    </div>
+  </app-card>
+  <app-card title="keyvalue Pipe">
+    <div class="flex flex-col h-full">
+      <!-- <pre class="text-warning">{{profile | keyvalue | json}}</pre> -->
+      <ul>
+        @for (item of profile | keyvalue; track $index) {
+          <li>
+            <strong class="text-warning">{{item.key | titlecase}}: </strong>
+            <span>{{item.value}}</span>
+          </li>
 
-      <div class="card-actions justify-center mt-4">
-        <button [disabled]="clients().length === 0" (click)="removeClient()" class="btn btn-primary">
-          Remove Client
-        </button>
-      </div>
+        }
+      </ul>
+    </div>
+  </app-card>
+  <app-card title="Async Pipe">
+    <div class="flex flex-col h-full">
+      <p class="text-warning">{{promiseValue | async }}</p>
+      @if (promiseValue | async; as value) {
+        <p class="text-info">{{ value }}</p>
+      } @else {
+        <p class="text-info">Espere por favor ...</p>
+      }
+    </div>
+  </app-card>
+  <app-card title="Async Pipe with Observables">
+    <div class="flex flex-col h-full">
+      <p class="text-warning">{{myObservableTimer | async }}</p>
+      @if (myObservableTimer | async; as value) {
+        <p class="text-info">Valor: {{ value }}</p>
+      }
+
+      @else {
+        <p class="text-info">Esperando primer valor ...</p>
+      }
     </div>
   </app-card>
 </section>
