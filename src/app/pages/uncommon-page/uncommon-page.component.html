@@ -4,9 +4,9 @@
 </section>
 <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
   <app-card title="i18nSelectPipe">
-    <p>Contenido del Padre</p>
+    <p>Saludos <strong>{{client().name}}</strong> , es un placer {{client().gender | i18nSelect:invitationMap}} a nuestro evento.</p>
     <div class="card-actions justify-end">
-      <button class="btn btn-primary">Click me</button>
+      <button (click)="changeClient()" class="btn btn-primary">Change Client</button>
     </div>
   </app-card>
 </section>
