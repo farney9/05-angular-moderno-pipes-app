@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { heroes } from '../../data/heroes.data';
-import { CanFlyPipe, HeroColorPipe, HeroTextColorPipe, ToggleCasePipe } from '../../pipes';
+import { CanFlyPipe, HeroColorPipe, HeroCreatorPipe, HeroTextColorPipe, ToggleCasePipe } from '../../pipes';
 import { TitleCasePipe } from '@angular/common';
 
 @Component({
@@ -11,6 +11,7 @@ import { TitleCasePipe } from '@angular/common';
     HeroColorPipe,
     HeroTextColorPipe,
     TitleCasePipe,
+    HeroCreatorPipe,
   ],
   templateUrl: './custom-page.component.html',
 })
