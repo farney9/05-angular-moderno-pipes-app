@@ -63,10 +63,10 @@
           </td>
           <td>
             <span
-              class="text-xs w-44 px-2 py-1 rounded font-semibold"
-              
+              class="text-xs text-black w-44 px-2 py-1 rounded font-semibold"
+              [style.backgroundColor]="hero.color | heroTextColor"
             >
-              {{hero.color | heroColor}}
+              {{hero.color | heroColor  | titlecase}}
             </span>
           </td>
           <td>{{hero.name}}</td>

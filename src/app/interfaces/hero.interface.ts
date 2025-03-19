@@ -1,4 +1,4 @@
-export enum Color {
+export enum HeroColor {
   red,
   black,
   blue,
@@ -14,13 +14,13 @@ export interface Hero {
   id: number;
   name: string;
   canFly: boolean;
-  color: Color;
+  color: HeroColor;
   creator: Creator;
 }
 
-export const ColorMap = {
-  [Color.red]: '#E57373',
-  [Color.black]: '#424242',
-  [Color.blue]: '#64B5F6',
-  [Color.green]: '#81C784',
+export const HeroColorMap = {
+  [HeroColor.red]: '#E57373',
+  [HeroColor.black]: '#424242',
+  [HeroColor.blue]: '#64B5F6',
+  [HeroColor.green]: '#81C784',
 };
