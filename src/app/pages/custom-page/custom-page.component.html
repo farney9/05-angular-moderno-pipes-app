@@ -1,1 +1,62 @@
-<p>custom-page works!</p>,
+<section class="my-3">
+  <h1 class="text-3xl font-bold">Custom Pipes</h1>
+  <h3 class="font-thin">Pipes not included in Angular</h3>
+</section>
+<section>
+  <div class="stats stats-vertical md:stats-horizontal shadow flex">
+    <div class="stat">
+      <div class="stat-title text-2xl text-secondary">ToggleCase Pipe</div>
+      <div class="stat-value">{{name() | toggleCase: upperCase() }}</div>
+      <div class="stat-desc text-warning text-lg">{{name()}}</div>
+      <div class="stat-actions my-3">
+        <button
+          (click)="upperCase.set(!this.upperCase())"
+          class="btn btn-md btn-success">
+          Toggle Name
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="divider divider-info"></div>
+<section class="my-3">
+  <h1 class="text-2xl font-bold">Custom pipes in action</h1>
+  <div class="flex gap-2 justify-end w-full">
+    <button class="btn btn-primary">
+      By Name
+    </button>
+    <button class="btn btn-accent">
+      By Can fly
+    </button>
+    <button class="btn btn-secondary">
+      By Color
+    </button>
+    <button class="btn btn-info">
+      By Creator
+    </button>
+  </div>
+</section>
+<section class="overflow-x-auto">
+  <table class="table table-xs table-pin-cols w-full">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Can Fly?</th>
+        <th>Color</th>
+        <th>Creator</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (hero of heroes(); track hero.id; let i = $index) {
+        <tr>
+          <th>{{i + 1}}</th>
+          <td>{{hero.name}}</td>
+          <td>{{hero.canFly}}</td>
+          <td>{{hero.color}}</td>
+          <td>{{hero.name}}</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</section>
