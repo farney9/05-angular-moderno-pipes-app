@@ -4,3 +4,4 @@ export * from './hero-color.pipe';
 export * from './hero-text-color.pipe';
 export * from './hero-creator.pipe';
 export * from './hero-sort-by.pipe';
+export * from './hero-filter.pipe';
